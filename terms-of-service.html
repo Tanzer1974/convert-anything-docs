@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Convert Anything Extension</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 8px;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header .subtitle {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .meta-info {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .meta-info p {
+            margin: 5px 0;
+            font-size: 0.9em;
+            color: #666;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            margin: 30px 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ecf0f1;
+            font-size: 1.8em;
+        }
+        
+        h3 {
+            color: #34495e;
+            margin: 25px 0 10px 0;
+            font-size: 1.4em;
+        }
+        
+        p {
+            margin: 15px 0;
+            text-align: justify;
+        }
+        
+        ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        .highlight {
+            background: #e8f4fd;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+            margin: 20px 0;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+        }
+        
+        .success {
+            background: #d4edda;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            margin: 20px 0;
+        }
+        
+        code {
+            background: #f8f9fa;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-top: 1px solid #dee2e6;
+        }
+        
+        .footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Terms of Service</h1>
+            <div class="subtitle">Convert Anything - Smart Unit Converter</div>
+        </div>
+        
+        <div class="meta-info">
+            <p><strong>Effective Date:</strong> August 6, 2025</p>
+            <p><strong>Version:</strong> 1.0.0</p>
+            <p><strong>Extension Version:</strong> 1.0.0</p>
+        </div>
+        
+        <h2>📋 Service Description</h2>
+        <p>Convert Anything - Smart Unit Converter ("the Extension") is a Chrome browser extension that provides instant unit conversion capabilities. The extension offers both a main menu interface and a context menu feature for quick conversions.</p>
+        
+        <h3>Core Features</h3>
+        <ul>
+            <li><strong>Main Menu:</strong> Comprehensive unit converter with multiple categories</li>
+            <li><strong>Context Menu:</strong> Right-click conversion for selected text</li>
+            <li><strong>Currency Conversion:</strong> Real-time exchange rates via API</li>
+            <li><strong>Multiple Categories:</strong> Length, Area, Volume, Weight, Temperature, Data Storage, Energy, Power, Pressure, Speed, Time, Angle, Fuel Consumption, and Currency</li>
+        </ul>
+        
+        <h2>💻 Technical Requirements</h2>
+        
+        <h3>System Requirements</h3>
+        <ul>
+            <li><strong>Browser:</strong> Google Chrome (version 88 or higher)</li>
+            <li><strong>Operating System:</strong> Windows, macOS, or Linux</li>
+            <li><strong>Internet Connection:</strong> Required for currency rate updates</li>
+            <li><strong>Storage:</strong> Minimal local storage for caching</li>
+        </ul>
+        
+        <h3>Extension Permissions</h3>
+        <div class="highlight">
+            <ul>
+                <li><strong>contextMenus:</strong> Enable right-click context menu functionality</li>
+                <li><strong>storage:</strong> Access localStorage for currency rate caching</li>
+                <li><strong>scripting:</strong> Inject content scripts for unit detection</li>
+                <li><strong>activeTab:</strong> Access current tab for context menu operations</li>
+            </ul>
+        </div>
+        
+        <h2>🔒 Data and Privacy</h2>
+        
+        <h3>Data Collection</h3>
+        <div class="success">
+            <ul>
+                <li>✅ <strong>No Personal Data:</strong> We do not collect personal information</li>
+                <li>✅ <strong>No Tracking:</strong> No user behavior tracking</li>
+                <li>✅ <strong>Local Processing:</strong> All conversions performed locally</li>
+                <li>✅ <strong>Minimal Storage:</strong> Only currency rates cached locally</li>
+            </ul>
+        </div>
+        
+        <h3>External Services</h3>
+        <ul>
+            <li><strong>Currency API:</strong> exchangerate-api.com for live exchange rates</li>
+            <li><strong>Data Shared:</strong> None (read-only API calls)</li>
+            <li><strong>Security:</strong> HTTPS-only connections</li>
+            <li><strong>Frequency:</strong> Automatic updates every 24 hours</li>
+        </ul>
+        
+        <h2>👤 User Responsibilities</h2>
+        
+        <h3>Acceptable Use</h3>
+        <ul>
+            <li><strong>Personal Use:</strong> Use the extension for personal unit conversion needs</li>
+            <li><strong>Educational Use:</strong> Use for educational and learning purposes</li>
+            <li><strong>Professional Use:</strong> Use for work-related calculations</li>
+            <li><strong>Compliance:</strong> Use in compliance with applicable laws</li>
+        </ul>
+        
+        <h3>Prohibited Use</h3>
+        <div class="warning">
+            <ul>
+                <li>❌ <strong>Illegal Activities:</strong> Do not use for illegal purposes</li>
+                <li>❌ <strong>Commercial Exploitation:</strong> Do not reverse engineer or copy the extension</li>
+                <li>❌ <strong>Malicious Use:</strong> Do not use to harm others or systems</li>
+                <li>❌ <strong>Spam:</strong> Do not use for spam or harassment</li>
+            </ul>
+        </div>
+        
+        <h3>User Obligations</h3>
+        <ul>
+            <li><strong>Accuracy:</strong> Verify conversion results for critical applications</li>
+            <li><strong>Updates:</strong> Keep the extension updated for best performance</li>
+            <li><strong>Reporting:</strong> Report bugs or issues through appropriate channels</li>
+            <li><strong>Respect:</strong> Respect the intellectual property of the extension</li>
+        </ul>
+        
+        <h2>⚖️ Disclaimers</h2>
+        
+        <h3>Accuracy Disclaimer</h3>
+        <div class="warning">
+            <p><strong>Important:</strong> While we strive for accuracy, conversion results are provided "as is" without warranty. Users should verify critical calculations independently.</p>
+        </div>
+        
+        <h3>Service Availability</h3>
+        <ul>
+            <li><strong>Best Effort:</strong> We provide the service on a best-effort basis</li>
+            <li><strong>No Guarantee:</strong> No guarantee of continuous availability</li>
+            <li><strong>Updates:</strong> Service may be updated or modified</li>
+            <li><strong>Third-Party Dependencies:</strong> Currency rates depend on external API</li>
+        </ul>
+        
+        <h3>Limitation of Liability</h3>
+        <ul>
+            <li><strong>No Damages:</strong> We are not liable for any damages from use</li>
+            <li><strong>Indirect Losses:</strong> No liability for indirect or consequential losses</li>
+            <li><strong>Maximum Liability:</strong> Limited to the amount paid for the service (if any)</li>
+            <li><strong>Force Majeure:</strong> Not liable for events beyond our control</li>
+        </ul>
+        
+        <h2>🔄 Updates and Changes</h2>
+        
+        <h3>Extension Updates</h3>
+        <ul>
+            <li><strong>Automatic Updates:</strong> Extension may update automatically</li>
+            <li><strong>Manual Updates:</strong> Users can manually update through Chrome</li>
+            <li><strong>Backward Compatibility:</strong> We strive to maintain compatibility</li>
+            <li><strong>Feature Changes:</strong> Features may be added, modified, or removed</li>
+        </ul>
+        
+        <h3>Terms Updates</h3>
+        <ul>
+            <li><strong>Notification:</strong> Users will be notified of significant changes</li>
+            <li><strong>Continued Use:</strong> Continued use constitutes acceptance of changes</li>
+            <li><strong>Version Tracking:</strong> Terms version is clearly marked</li>
+            <li><strong>Effective Date:</strong> Changes effective immediately upon posting</li>
+        </ul>
+        
+        <h2>🚫 Termination</h2>
+        
+        <h3>User Termination</h3>
+        <ul>
+            <li><strong>Uninstall:</strong> Users can uninstall the extension at any time</li>
+            <li><strong>No Notice Required:</strong> No advance notice required for uninstallation</li>
+            <li><strong>Data Removal:</strong> Uninstalling removes all local data</li>
+            <li><strong>No Refunds:</strong> No refunds for free service</li>
+        </ul>
+        
+        <h3>Service Termination</h3>
+        <ul>
+            <li><strong>Discontinuation:</strong> We may discontinue the service with notice</li>
+            <li><strong>Violation:</strong> May terminate for terms violations</li>
+            <li><strong>Technical Issues:</strong> May suspend for technical problems</li>
+            <li><strong>Legal Requirements:</strong> May terminate for legal compliance</li>
+        </ul>
+        
+        <h2>📞 Support and Contact</h2>
+        
+        <h3>Support Information</h3>
+        <ul>
+            <li><strong>Documentation:</strong> Available in the extension and online</li>
+            <li><strong>Bug Reports:</strong> Report issues through GitHub or extension feedback</li>
+            <li><strong>Feature Requests:</strong> Submit through appropriate channels</li>
+            <li><strong>Response Time:</strong> We aim to respond within 48 hours</li>
+        </ul>
+        
+        <h3>Contact Methods</h3>
+        <ul>
+            <li><strong>Email:</strong> support@convertanything.com (placeholder)</li>
+            <li><strong>GitHub:</strong> Issues and discussions on GitHub</li>
+            <li><strong>Extension:</strong> Feedback option within the extension</li>
+            <li><strong>Documentation:</strong> Help and guides available online</li>
+        </ul>
+        
+        <h2>⚖️ Legal Provisions</h2>
+        
+        <h3>Governing Law</h3>
+        <ul>
+            <li><strong>Jurisdiction:</strong> Governed by applicable laws</li>
+            <li><strong>Disputes:</strong> Disputes resolved through appropriate channels</li>
+            <li><strong>Severability:</strong> Invalid provisions do not affect others</li>
+            <li><strong>Entire Agreement:</strong> These terms constitute the entire agreement</li>
+        </ul>
+        
+        <h3>Intellectual Property</h3>
+        <ul>
+            <li><strong>Ownership:</strong> Extension and content owned by the developer</li>
+            <li><strong>License:</strong> Users granted limited license to use the extension</li>
+            <li><strong>No Transfer:</strong> No transfer of ownership rights</li>
+            <li><strong>Reservation:</strong> All rights not expressly granted are reserved</li>
+        </ul>
+        
+        <h3>Third-Party Services</h3>
+        <ul>
+            <li><strong>Currency API:</strong> Exchange rates provided by exchangerate-api.com</li>
+            <li><strong>Chrome Web Store:</strong> Distribution through Google's platform</li>
+            <li><strong>No Endorsement:</strong> No endorsement of third-party services</li>
+            <li><strong>Third-Party Terms:</strong> Users subject to third-party terms</li>
+        </ul>
+        
+        <h2>✅ Compliance and Standards</h2>
+        
+        <h3>Chrome Web Store Compliance</h3>
+        <div class="success">
+            <ul>
+                <li>✅ <strong>Manifest V3:</strong> Compliant with latest Chrome standards</li>
+                <li>✅ <strong>Privacy Policy:</strong> Comprehensive privacy documentation</li>
+                <li>✅ <strong>Terms of Service:</strong> Clear terms and conditions</li>
+                <li>✅ <strong>Security Standards:</strong> Follows Chrome security guidelines</li>
+            </ul>
+        </div>
+        
+        <h3>Data Protection Compliance</h3>
+        <div class="success">
+            <ul>
+                <li>✅ <strong>GDPR Compliant:</strong> No personal data collection</li>
+                <li>✅ <strong>CCPA Compliant:</strong> No personal data collection</li>
+                <li>✅ <strong>Local Processing:</strong> All data processed locally</li>
+                <li>✅ <strong>User Rights:</strong> Clear information about user rights</li>
+            </ul>
+        </div>
+        
+        <h2>📋 Acceptance of Terms</h2>
+        
+        <h3>By Using This Extension</h3>
+        <div class="highlight">
+            <p>By installing and using the Convert Anything - Smart Unit Converter extension, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.</p>
+        </div>
+        
+        <h3>Continued Use</h3>
+        <ul>
+            <li><strong>Acceptance:</strong> Continued use constitutes acceptance of terms</li>
+            <li><strong>Updates:</strong> Acceptance of updated terms through continued use</li>
+            <li><strong>Notification:</strong> Users notified of significant changes</li>
+            <li><strong>Withdrawal:</strong> Users can withdraw by uninstalling the extension</li>
+        </ul>
+        
+        <div class="footer">
+            <p><strong>Last Updated:</strong> August 6, 2025</p>
+            <p><strong>Version:</strong> 1.0.0</p>
+            <p><strong>Extension Version:</strong> 1.0.0</p>
+            <br>
+            <p><em>These Terms of Service are effective immediately and apply to all users of the Convert Anything - Smart Unit Converter Chrome extension.</em></p>
+            <br>
+            <p><a href="privacy-policy.html">View Privacy Policy</a> | <a href="index.html">Back to Home</a></p>
+        </div>
+    </div>
+</body>
+</html> 

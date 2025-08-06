@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert Anything - Documentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 12px;
+        }
+        
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .header .subtitle {
+            font-size: 1.3em;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+        
+        .header .version {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+        
+        .hero-section {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, #e3f2fd 0%, #f3f4f6 100%);
+            border-radius: 12px;
+            border: 1px solid #e1e5e9;
+        }
+        
+        .hero-section h2 {
+            color: #2c3e50;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        
+        .hero-section p {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 25px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border: 1px solid #e1e5e9;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+        }
+        
+        .feature-card h3 {
+            color: #2c3e50;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .feature-card .icon {
+            font-size: 1.5em;
+        }
+        
+        .feature-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-card li {
+            margin: 8px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .feature-card li:before {
+            content: "✓";
+            color: #28a745;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .documentation-section {
+            margin-bottom: 40px;
+        }
+        
+        .documentation-section h2 {
+            color: #2c3e50;
+            font-size: 2em;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .docs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .doc-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: block;
+        }
+        
+        .doc-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+            text-decoration: none;
+            color: white;
+        }
+        
+        .doc-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        
+        .doc-card p {
+            opacity: 0.9;
+            font-size: 0.95em;
+        }
+        
+        .compliance-section {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            border-left: 4px solid #28a745;
+        }
+        
+        .compliance-section h2 {
+            color: #2c3e50;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+        
+        .compliance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .compliance-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #e1e5e9;
+        }
+        
+        .compliance-item .icon {
+            font-size: 2em;
+            color: #28a745;
+            margin-bottom: 10px;
+        }
+        
+        .compliance-item h4 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .compliance-item p {
+            font-size: 0.9em;
+            color: #666;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border-top: 1px solid #dee2e6;
+        }
+        
+        .footer h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .footer p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 2.2em;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .docs-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .compliance-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Convert Anything</h1>
+            <div class="subtitle">Smart Unit Converter Chrome Extension</div>
+            <div class="version">Version 1.0.0</div>
+        </div>
+        
+        <div class="hero-section">
+            <h2>🚀 Powerful Unit Conversion at Your Fingertips</h2>
+            <p>Convert Anything is a comprehensive Chrome extension that provides instant unit conversion capabilities through both a main menu interface and a convenient context menu feature. Perfect for students, professionals, and anyone who needs quick and accurate conversions.</p>
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3><span class="icon">🎯</span> Main Menu Converter</h3>
+                <ul>
+                    <li>Comprehensive unit converter with multiple categories</li>
+                    <li>Real-time currency conversion with live rates</li>
+                    <li>User-friendly interface with modern design</li>
+                    <li>Copy results with one click</li>
+                    <li>Dark mode support</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card">
+                <h3><span class="icon">⚡</span> Context Menu</h3>
+                <ul>
+                    <li>Right-click conversion for selected text</li>
+                    <li>Instant unit detection and conversion</li>
+                    <li>Works on any webpage</li>
+                    <li>Smart unit recognition</li>
+                    <li>Quick copy functionality</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card">
+                <h3><span class="icon">💱</span> Currency Conversion</h3>
+                <ul>
+                    <li>Live exchange rates via API</li>
+                    <li>28+ supported currencies</li>
+                    <li>Automatic rate updates every 24 hours</li>
+                    <li>Offline functionality with cached rates</li>
+                    <li>Accurate market rates</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card">
+                <h3><span class="icon">📊</span> Multiple Categories</h3>
+                <ul>
+                    <li>Length, Area, Volume, Weight</li>
+                    <li>Temperature, Data Storage, Energy</li>
+                    <li>Power, Pressure, Speed, Time</li>
+                    <li>Angle, Fuel Consumption, Currency</li>
+                    <li>14 comprehensive categories</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="documentation-section">
+            <h2>📋 Documentation</h2>
+            <div class="docs-grid">
+                <a href="privacy-policy.html" class="doc-card">
+                    <h3>🔒 Privacy Policy</h3>
+                    <p>Learn how we protect your privacy and handle data. No personal information collected.</p>
+                </a>
+                
+                <a href="terms-of-service.html" class="doc-card">
+                    <h3>⚖️ Terms of Service</h3>
+                    <p>Understand the terms and conditions for using the Convert Anything extension.</p>
+                </a>
+            </div>
+        </div>
+        
+        <div class="compliance-section">
+            <h2>✅ Compliance & Standards</h2>
+            <div class="compliance-grid">
+                <div class="compliance-item">
+                    <div class="icon">🛡️</div>
+                    <h4>Privacy Compliant</h4>
+                    <p>GDPR & CCPA compliant with no personal data collection</p>
+                </div>
+                
+                <div class="compliance-item">
+                    <div class="icon">🔐</div>
+                    <h4>Secure</h4>
+                    <p>HTTPS-only connections and local data processing</p>
+                </div>
+                
+                <div class="compliance-item">
+                    <div class="icon">⚡</div>
+                    <h4>Manifest V3</h4>
+                    <p>Built with latest Chrome extension standards</p>
+                </div>
+                
+                <div class="compliance-item">
+                    <div class="icon">📱</div>
+                    <h4>User-Friendly</h4>
+                    <p>Modern design with accessibility features</p>
+                </div>
+                
+                <div class="compliance-item">
+                    <div class="icon">🌐</div>
+                    <h4>Store Ready</h4>
+                    <p>Compliant with Chrome Web Store requirements</p>
+                </div>
+                
+                <div class="compliance-item">
+                    <div class="icon">🔄</div>
+                    <h4>Regular Updates</h4>
+                    <p>Automatic updates and continuous improvements</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <h3>📞 Support & Contact</h3>
+            <p><strong>Extension Version:</strong> 1.0.0</p>
+            <p><strong>Last Updated:</strong> August 6, 2025</p>
+            <p><strong>Documentation Version:</strong> 1.0.0</p>
+            <br>
+            <p><em>Convert Anything - Smart Unit Converter is designed to make unit conversion simple, fast, and accurate for everyone.</em></p>
+            <br>
+            <p>
+                <a href="privacy-policy.html">Privacy Policy</a> | 
+                <a href="terms-of-service.html">Terms of Service</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html> 
