@@ -26,9 +26,9 @@ Convert Anything is a comprehensive Chrome extension that provides instant unit 
 When submitting to the Chrome Web Store, use these URLs:
 
 ```
-Privacy Policy: https://yourusername.github.io/convert-anything-docs/privacy-policy.html
-Terms of Service: https://yourusername.github.io/convert-anything-docs/terms-of-service.html
-Support: https://github.com/yourusername/convert-anything-docs
+Privacy Policy: https://tanzer1974.github.io/convert-anything-docs/privacy-policy.html
+Terms of Service: https://tanzer1974.github.io/convert-anything-docs/terms-of-service.html
+Support: https://github.com/Tanzer1974/convert-anything-docs
 ```
 
 ## 🛠️ Setup Instructions
@@ -63,9 +63,9 @@ Support: https://github.com/yourusername/convert-anything-docs
 ### Step 4: Get Your URLs
 Your documentation will be available at:
 ```
-Main Page: https://yourusername.github.io/convert-anything-docs/
-Privacy Policy: https://yourusername.github.io/convert-anything-docs/privacy-policy.html
-Terms of Service: https://yourusername.github.io/convert-anything-docs/terms-of-service.html
+Main Page: https://tanzer1974.github.io/convert-anything-docs/
+Privacy Policy: https://tanzer1974.github.io/convert-anything-docs/privacy-policy.html
+Terms of Service: https://tanzer1974.github.io/convert-anything-docs/terms-of-service.html
 ```
 
 ## ✅ Compliance Status
