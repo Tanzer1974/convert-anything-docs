@@ -1,0 +1,40 @@
+{
+  "rates": {
+    "USD": 1,
+    "EUR": 0.864,
+    "JPY": 147.1,
+    "GBP": 0.752,
+    "CAD": 1.38,
+    "AUD": 1.54,
+    "CHF": 0.807,
+    "CNY": 7.18,
+    "INR": 87.71,
+    "BRL": 5.54,
+    "KRW": 1384.29,
+    "MXN": 18.87,
+    "THB": 32.39,
+    "TRY": 40.69,
+    "RUB": 79.8,
+    "SGD": 1.29,
+    "NZD": 1.69,
+    "ZAR": 17.95,
+    "HKD": 7.85,
+    "AED": 3.67,
+    "SEK": 9.66,
+    "NOK": 10.8,
+    "DKK": 6.9,
+    "PLN": 4.0,
+    "PHP": 55.0,
+    "IDR": 15500.0,
+    "MYR": 4.7,
+    "ILS": 3.7
+  },
+  "metadata": {
+    "timestamp": 1733456789000,
+    "last_updated": "2025-01-06T10:30:00Z",
+    "source": "exchangerate-api.com",
+    "version": "1.0.0",
+    "cache_duration": 7200000,
+    "market_status": "market_hours"
+  }
+}
