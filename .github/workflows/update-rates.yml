@@ -1,0 +1,83 @@
+     name: Update currency rates
+
+     on:
+       schedule:
+         # Weekdays every 2 hours
+         - cron: '0 */2 * * 1-5'
+         # Weekends once daily at 12:00 UTC
+         - cron: '0 12 * * 6,0'
+       workflow_dispatch: {}
+
+     jobs:
+       update:
+         runs-on: ubuntu-latest
+         steps:
+           - uses: actions/checkout@v4
+           - uses: actions/setup-node@v4
+             with:
+               node-version: '20'
+           - name: Fetch rates and write file
+             env:
+               API_URL: ${{ secrets.API_URL }}
+               API_KEY: ${{ secrets.API_KEY }}
+             run: |
+               node -e "
+               const fs = require('fs');
+               const https = require('https');
+
+               function fetchJson(url, headers = {}) {
+                 return new Promise((resolve, reject) => {
+                   https.get(url, { headers }, (res) => {
+                     let data = '';
+                     res.on('data', (c) => data += c);
+                     res.on('end', () => {
+                       try { resolve(JSON.parse(data)); } catch (e) { reject(e); }
+                     });
+                   }).on('error', reject);
+                 });
+               }
+
+               (async () => {
+                 const url = process.env.API_URL;
+                 const key = process.env.API_KEY;
+                 const headers = key ? { 'Authorization': 'Bearer ' + key } : {};
+                 const data = await fetchJson(url, headers);
+
+                 // Normalize to a simple { CODE: number } map
+                 const raw = (data && typeof data === 'object' && data.rates && typeof data.rates === 'object')
+                   ? data.rates : data;
+                 const out = {};
+                 for (const k of Object.keys(raw || {})) {
+                   const code = String(k).toUpperCase();
+                   const num = Number(raw[k]);
+                   if (Number.isFinite(num)) out[code] = num;
+                 }
+                 if (out.USD === undefined) out.USD = 1;
+
+                 // Include metadata with a 2h default cache duration (you can change this)
+                 const payload = {
+                   rates: out,
+                   metadata: {
+                     timestamp: Date.now(),
+                     last_updated: new Date().toISOString(),
+                     source: 'external_api',
+                     version: '1.0.0',
+                     cache_duration: 7200000,
+                     market_status: 'market_hours'
+                   }
+                 };
+
+                 fs.writeFileSync('currency-rates-shared/rates.json', JSON.stringify(payload, null, 2) + '\\n');
+               })().catch(e => { console.error(e); process.exit(1); });
+               "
+           - name: Commit and push if changed
+             run: |
+               git config user.email "${{ secrets.GH_EMAIL }}"
+               git config user.name "${{ secrets.GH_NAME }}"
+               if ! git diff --quiet; then
+                 git add currency-rates-shared/rates.json
+                 git commit -m "chore(rates): update rates.json [skip ci]"
+                 git push
+               else
+                 echo "No changes in rates.json"
+               fi
