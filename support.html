@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - Convert Anything Extension</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            font-size: 2.5em;
+            font-weight: 800;
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .support-section {
+            background: white;
+            margin-bottom: 30px;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .support-section h2 {
+            color: #1e3a8a;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 10px;
+        }
+        
+        .support-section h3 {
+            color: #374151;
+            margin: 20px 0 10px 0;
+            font-size: 1.2em;
+        }
+        
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .contact-method {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #1e40af;
+            transition: transform 0.2s;
+        }
+        
+        .contact-method:hover {
+            transform: translateY(-2px);
+        }
+        
+        .contact-method h4 {
+            color: #1e40af;
+            margin-bottom: 10px;
+        }
+        
+        .contact-method a {
+            color: #1e40af;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .contact-method a:hover {
+            text-decoration: underline;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8fafc;
+            border-radius: 8px;
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            color: #1e3a8a;
+            margin-bottom: 8px;
+        }
+        
+        .faq-answer {
+            color: #4b5563;
+            line-height: 1.5;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .feature-list li:before {
+            content: "✅ ";
+            color: #10b981;
+            font-weight: bold;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .contact-methods {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">Convert Anything</div>
+            <div class="subtitle">Smart Unit Converter Extension</div>
+            <p>Need help? We're here to support you!</p>
+        </div>
+
+        <div class="support-section">
+            <h2> Contact Support</h2>
+            <p>We're committed to providing excellent support for our users. Choose the method that works best for you:</p>
+            
+            <div class="contact-methods">
+                <div class="contact-method">
+                    <h4>📧 Email Support</h4>
+                    <p>For direct assistance and detailed inquiries:</p>
+                    <a href="mailto:gozutokbusiness@gmail.com">gozutokbusiness@gmail.com</a>
+                    <p><small>Response time: Within 24 hours</small></p>
+                </div>
+                
+                <div class="contact-method">
+                    <h4>�� Terms of Service</h4>
+                    <p>Read our terms and conditions:</p>
+                    <a href="https://tanzer1974.github.io/convert-anything-docs/terms-of-service.html" target="_blank">Terms of Service</a>
+                    <p><small>Legal information and usage terms</small></p>
+                </div>
+                
+                <div class="contact-method">
+                    <h4>📚 Documentation</h4>
+                    <p>Learn more about features and usage:</p>
+                    <a href="https://tanzer1974.github.io/convert-anything-docs/" target="_blank">Documentation</a>
+                    <p><small>Comprehensive guides and tutorials</small></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="support-section">
+            <h2>❓ Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">How do I use the extension?</div>
+                <div class="faq-answer">Simply select any text containing measurements on any webpage, right-click, and choose "Convert Anything: Convert Units" from the context menu. The extension will instantly detect the unit and show you conversions.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">What measurement categories are supported?</div>
+                <div class="faq-answer">Our extension supports 16 comprehensive categories including Length, Temperature, Weight, Area, Volume, Time, Pressure, Energy, Currency, and more - totaling 200+ individual units.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Does the extension work with different number formats?</div>
+                <div class="faq-answer">Yes! We support both European (1.200) and US (1,200) number formats, so the extension works seamlessly regardless of your location or preference.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Is my data private and secure?</div>
+                <div class="faq-answer">Absolutely! All conversions are processed locally on your device. We don't collect, store, or transmit any of your data. Your privacy is our priority.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">The extension isn't working. What should I do?</div>
+                <div class="faq-answer">First, try refreshing the page and ensuring the extension is enabled. If the issue persists, please contact us via email with details about the problem.</div>
+            </div>
+        </div>
+
+        <div class="support-section">
+            <h2> Key Features</h2>
+            <ul class="feature-list">
+                <li>200+ measurement categories with comprehensive unit coverage</li>
+                <li>Right-click context menu integration for instant access</li>
+                <li>Dual number format recognition (European and US)</li>
+                <li>Privacy-focused local processing with no data collection</li>
+                <li>Modern, responsive user interface</li>
+                <li>Works on any webpage without installation requirements</li>
+                <li>Real-time unit detection and conversion</li>
+                <li>Professional-grade accuracy and reliability</li>
+            </ul>
+        </div>
+
+        <div class="support-section">
+            <h2>🔧 Troubleshooting Tips</h2>
+            <h3>Common Issues and Solutions:</h3>
+            
+            <h4>Extension not appearing in context menu:</h4>
+            <ul>
+                <li>Ensure the extension is enabled in Chrome</li>
+                <li>Refresh the webpage you're trying to use it on</li>
+                <li>Check that you have text selected before right-clicking</li>
+            </ul>
+            
+            <h4>Conversions not working:</h4>
+            <ul>
+                <li>Make sure the text contains recognizable units (e.g., "100 kg", "50°C")</li>
+                <li>Try selecting different text or refreshing the page</li>
+                <li>Check that the extension has the necessary permissions</li>
+            </ul>
+            
+            <h4>Performance issues:</h4>
+            <ul>
+                <li>Close unnecessary browser tabs</li>
+                <li>Restart Chrome if the issue persists</li>
+                <li>Ensure you have the latest version of the extension</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2024 Convert Anything Extension. All rights reserved.</p>
+            <p>Built with ❤️ for the Chrome Web Store community</p>
+        </div>
+    </div>
+</body>
+</html>
