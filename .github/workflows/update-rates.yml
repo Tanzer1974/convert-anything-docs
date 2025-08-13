@@ -5,10 +5,9 @@ on:
     # Run every 6 hours
     - cron: '0 */6 * * *'
   workflow_dispatch: # Allow manual trigger
-  push:
-    branches: [ main ]
-    paths:
-      - 'currency-rates-shared/**'
+
+permissions:
+  contents: write
 
 jobs:
   update-rates:
@@ -23,17 +22,14 @@ jobs:
       with:
         node-version: '18'
         
-    - name: Install dependencies
-      run: npm install
-      
     - name: Fetch latest rates from Frankfurter API
       run: |
         node scripts/fetch-currency-rates.js
         
     - name: Commit and push changes
       run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
         git add currency-rates-shared/
         git diff --quiet && git diff --staged --quiet || git commit -m "Update currency rates [skip ci]"
         git push
