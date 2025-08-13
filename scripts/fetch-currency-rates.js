@@ -1,17 +1,32 @@
 const fs = require('fs');
 const path = require('path');
+const https = require('https');
 
 async function fetchCurrencyRates() {
   try {
     console.log('Fetching latest currency rates from Frankfurter API...');
     
-    // Fetch from Frankfurter API
-    const response = await fetch('https://api.frankfurter.app/latest');
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    
-    const data = await response.json();
+    // Fetch from Frankfurter API using Node.js built-in https module
+    const data = await new Promise((resolve, reject) => {
+      https.get('https://api.frankfurter.app/latest', (res) => {
+        let data = '';
+        
+        res.on('data', (chunk) => {
+          data += chunk;
+        });
+        
+        res.on('end', () => {
+          try {
+            const jsonData = JSON.parse(data);
+            resolve(jsonData);
+          } catch (error) {
+            reject(new Error(`Failed to parse JSON: ${error.message}`));
+          }
+        });
+      }).on('error', (error) => {
+        reject(new Error(`HTTP request failed: ${error.message}`));
+      });
+    });
     
     // Convert EUR-based rates to USD-based rates
     const usdRate = data.rates.USD;
