@@ -29,12 +29,11 @@
     "THB": 32.38494439692044,
     "TRY": 40.786997433704016,
     "ZAR": 17.577416595380665,
-    "USD": 1,
-    "EUR": 0.8554319931565441
+    "USD": 1
   },
   "metadata": {
-    "timestamp": 1755189822032,
-    "last_updated": "2025-08-14T16:43:42.032Z",
+    "timestamp": 1755197703769,
+    "last_updated": "2025-08-14T18:55:03.769Z",
     "source": "frankfurter",
     "version": "1.0.0",
     "cache_duration": 86400000,
