@@ -42,9 +42,27 @@ async function fetchCurrencyRates() {
     // Add USD as base (1.0)
     usdBasedRates.USD = 1;
     
-    // Create the final structure
+    // CRITICAL FIX: Add EUR rate (it was missing!)
+    usdBasedRates.EUR = 1 / usdRate;
+    
+    // Filter to only include the currencies your extension needs
+    const requiredCurrencies = [
+      'USD', 'EUR', 'GBP', 'JPY', 'CAD', 'AUD', 'CHF', 'CNY', 'INR', 'BRL',
+      'KRW', 'MXN', 'THB', 'TRY', 'RUB', 'SGD', 'NZD', 'ZAR', 'HKD', 'AED',
+      'SEK', 'NOK', 'DKK', 'PLN', 'PHP', 'IDR', 'MYR', 'ILS'
+    ];
+    
+    // Create filtered rates object
+    const filteredRates = {};
+    requiredCurrencies.forEach(currency => {
+      if (usdBasedRates[currency] !== undefined) {
+        filteredRates[currency] = usdBasedRates[currency];
+      }
+    });
+    
+    // Create the final structure with filtered rates
     const ratesData = {
-      rates: usdBasedRates,
+      rates: filteredRates,
       metadata: {
         timestamp: Date.now(),
         last_updated: new Date().toISOString(),
@@ -69,7 +87,8 @@ async function fetchCurrencyRates() {
     console.log(`�� Saved to: ${outputPath}`);
     console.log(`🕒 Last updated: ${ratesData.metadata.last_updated}`);
     console.log(`�� Base currency: USD`);
-    console.log(`🌍 Currencies: ${Object.keys(usdBasedRates).length}`);
+    console.log(`🌍 Currencies: ${Object.keys(filteredRates).length}`);
+    console.log(`🔑 Essential currencies: USD=${filteredRates.USD}, EUR=${filteredRates.EUR?.toFixed(6)}, TRY=${filteredRates.TRY?.toFixed(6)}`);
     
   } catch (error) {
     console.error('❌ Error fetching currency rates:', error.message);
